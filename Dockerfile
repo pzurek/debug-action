@@ -9,7 +9,8 @@ LABEL "com.github.actions.description"="Log the action's environment variables a
 LABEL "com.github.actions.icon"="code"
 LABEL "com.github.actions.color"="yellow"
 
-RUN apk --no-cache add jq
+RUN apk --no-cache add jq /
+apk --no-cache add tree
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
